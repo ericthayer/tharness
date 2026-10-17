@@ -1,0 +1,30 @@
+{
+  "name": "agent-gateway",
+  "version": "0.1.0",
+  "description": "Portable MCP gateway that serves design-system data to any agentic host over Streamable HTTP or stdio.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "agent-gateway": "dist/src/stdio.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "stdio": "tsx src/stdio.ts",
+    "inspect": "npx @modelcontextprotocol/inspector tsx src/stdio.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
